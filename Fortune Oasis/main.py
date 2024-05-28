@@ -18,9 +18,12 @@ def welcome(): #Introduction to the games available
 
 def rules():
     print("Rules at Fortune Oasis!")
-    
+    print("Christmas Crackers: To win this you must choose who will receive the Party Hat "
+          + "[50/50]")
+
 def main():
     welcome()
+    rules()
 
 if __name__ == "__main__":
     main()
