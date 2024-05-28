@@ -16,6 +16,9 @@ def welcome(): #Introduction to the games available
     print("Select your game options with these commands.")
     print("Christmas Crackers: !You / !Me - OR - Dicing: !H / !L")
 
+def rules():
+    print("Rules at Fortune Oasis!")
+    
 def main():
     welcome()
 
