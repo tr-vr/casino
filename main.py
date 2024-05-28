@@ -10,8 +10,9 @@ def welcome(): #Introduction to the games available
     print("Christmas Cracker [1.95x] & Dicing [2x]")
     time.sleep(2)
     print("If you want to learn how to play, type \'!rules\' in the chat below.")
-    time.sleep(2)
+    time.sleep(1)
     print("~" * 65)
+    time.sleep(2)
     print("Select your game options with these commands.")
     print("Christmas Crackers: !You / !Me - OR - Dicing: !H / !L")
 
