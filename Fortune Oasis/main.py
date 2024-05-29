@@ -78,7 +78,6 @@ def menu(x):
               + "\033[0m")
         print("[Type \033[31m'!help'\033[0m to see all available options].")
     
-
 if __name__ == "__main__":
     welcome()
     while True:
