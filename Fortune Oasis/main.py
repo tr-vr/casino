@@ -14,18 +14,18 @@ def welcome():
     time.sleep(1)
     print("Christmas Cracker [1.95x] & Dicing [2.0x].")
     time.sleep(2)
-    print("If you want to learn how to play, type \'!rules\' in the chat below.")
+    print("If you want to learn how to play, type \033[31m\'!Rules\'\033[0m in the chat below.")
     time.sleep(1)
     print("~" * 66)
     time.sleep(2)
     print("Select your game options with these commands.")
-    print("Begin by typing !Trade to enter into a offer.")
-    print("Christmas Crackers: !You / !Me - OR - Dicing: !H / !L")
+    print("Begin by typing \033[31m!Trade\033[0m to enter into a offer.")
+    print("\033[31mChristmas Crackers: !You / !Me - OR - Dicing: !H / !L\033[0m")
     
 def rules():
     """ Basic rules on on how to play. """
     print('-' * 23)
-    print("Rules at Fortune Oasis!")
+    print("\033[1;34mRules at Fortune Oasis!\033[0m")
     print('-' * 23)
     print()
     time.sleep(1.5)
@@ -36,7 +36,7 @@ def rules():
     print("Dicing: A fair 0 - 100 sided dice is rolled.")
     print("Type !H [55-100] or !L [0 - 50]. Pick correctly to win [2.0x].")
     print()
-    print("To begin type !Trade or change your game mode with !You !Me !H !L")
+    print("To begin type \033[31m!Trade\033[0m or change your game mode with !You !Me !H !L")
 
 def userinput(): 
     """
@@ -60,13 +60,14 @@ def menu(x):
     if x == '!trade':
         i = trade()
         print()
-        print("You have offered " + i + " Oasis Points on " + setmode())
+        print("You have offered \033[1;34m" + i + "\033[0m Oasis Points on "
+              + "\033[31m" + setmode()"\033[0m")
     elif x == 'exit':
-        print("\033[31m" + "Thank you for playing! We hope to see you next time.")
+        print("\033[31m" + "Thank you for playing! We hope to see you next time.\033[0m")
         exit()
     else:
         print("*** You have entered in an invalid command ***")
-        print("[Type '!help' to see all available options].")
+        print("[Type \033[31m '!help' \033[0m to see all available options].")
     
 if __name__ == "__main__":
     welcome()
