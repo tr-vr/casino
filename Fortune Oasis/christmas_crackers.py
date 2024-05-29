@@ -6,3 +6,6 @@ You pull a christmas cracker
 The person you pulled the cracker with gets the prize.
 You get the prize from the cracker.
 """
+
+def modename():
+    return "Christmas Crackers"
