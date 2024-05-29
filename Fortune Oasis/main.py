@@ -74,7 +74,8 @@ def menu(x):
               + "time.\033[0m")
         exit()
     else:
-        print("*** You have entered in an invalid command ***")
+        print("\033[1;31m" + "*** You have entered in an invalid command ***"
+              + "\033[0m")
         print("[Type \033[31m'!help'\033[0m to see all available options].")
     
 
