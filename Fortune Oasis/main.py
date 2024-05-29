@@ -35,7 +35,11 @@ def userinput(): #non-case sensitive user input
 
 def trade():
     print("Sending trade request...")
-    amount = input("Offer?")
+    return input("Offer?")
+
+def gamemode(x = christmas_crackers):
+    print("The current game mode is")
+    return x
 
 def menu(x): #menu options
     if x == '!rules':
