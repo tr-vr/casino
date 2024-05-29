@@ -49,8 +49,8 @@ def menu(x): #menu options
         print("\033[31m" + "Thank you for playing! We hope to see you next time.")
         exit()
     else:
-        print("Please re-enter a valid choice. If you need help type -commands to see "
-              + "available options.")
+        print("*** You have entered in an invalid command ***")
+        print("[Type '!help' to see all available options].")
     
 if __name__ == "__main__":
     welcome()
