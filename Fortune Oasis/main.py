@@ -15,14 +15,15 @@ def welcome(): #Introduction to the games available
     print("~" * 66)
     time.sleep(2)
     print("Select your game options with these commands.")
+    print("Begin by typing !Trade to enter into a offer.")
     print("Christmas Crackers: !You / !Me - OR - Dicing: !H / !L")
     
 def rules(): #game rules
     print('-' * 23)
     print("Rules at Fortune Oasis!")
     print('-' * 23)
-    print("Christmas Crackers: A Christmas cracker is pulled & either the Host or Player will "
-          + "receive a prize [50/50].")
+    print("Christmas Crackers: A Christmas cracker is pulled & either the Host "
+          + "or Player will receive a prize [50/50].")
     print("Type !You [Host] or !Me [Player]. Pick correctly to win [1.95x].")
     time.sleep(1.5)
     print()
@@ -32,11 +33,15 @@ def rules(): #game rules
 def userinput(): #non-case sensitive user input
     return input(">>> ").casefold()
 
+def trade():
+    print("Sending trade request...")
+    amount = input("Offer?")
+
 def menu(x): #menu options
     if x == '!rules':
         return rules()
     elif x == 'exit':
-        print("\033[31mThank you for playing! We hope to see you next time.")
+        print("\033[31m" + "Thank you for playing! We hope to see you next time.")
         exit()
     
 if __name__ == "__main__":
