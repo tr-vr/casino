@@ -1,12 +1,10 @@
-""" This will contain the players information
-Username:
-Current Wallet Amount:
-Total Wagered:
+# This will contain the players information
+# - Username:
+# - Current Wallet Amount:
+# - Total Wagered:
 
-Will want to learn how to store this information, so that when a player quits
-how they will
-resume the game will the stats from last time. 
-"""
+# Will want to learn how to store this information, so that when a player 
+#   finishes playing they will be able to continue where they left off from.
 
 import sqlite3
 

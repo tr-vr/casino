@@ -1,12 +1,13 @@
-""" Main class that will be used to operate the casino """
+# Main class that will be used to run the game
 import time
 import christmas_crackers, higher_lower, player
 
+# For now it sets the default game mode to crackers
 def setmode(x = christmas_crackers):
     return x.name()
 
+# Welcome message when the program is ran
 def welcome(): 
-    """ Welcome message when the program is ran """
     print("Welcome to Fortune Oasis!")
     print('.' * 25)
     time.sleep(3)
@@ -23,9 +24,9 @@ def welcome():
     print("Begin by typing \033[31m!Trade\033[0m to enter into a offer.")
     print("\033[31mChristmas Crackers: !You / !Me - OR - Dicing: !H / !L" 
           + "\033[0m")
-    
+
+# Displays the rules of each gamemode    
 def rules():
-    """ Basic rules on on how to play. """
     print('-' * 23)
     print("\033[1;34mRules at Fortune Oasis!\033[0m")
     print('-' * 23)
@@ -41,16 +42,19 @@ def rules():
     print("To begin type \033[31m!Trade\033[0m or change your game mode with "
           + "!You !Me !H !L")
 
+# Captures user input
 def userinput(): 
     """
     Case-insensitive user input
     """
     return input(">>> ").casefold()
 
+# Returns amount that Player offers. Should be integer
 def trade():
     print("Sending trade request...")
     return input("Offer? ")
 
+# This is the menu function which will output based on diff choices typed
 def menu(x):
     """
     Menu options:
@@ -73,6 +77,7 @@ def menu(x):
         print("*** You have entered in an invalid command ***")
         print("[Type \033[31m'!help'\033[0m to see all available options].")
     
+
 if __name__ == "__main__":
     welcome()
     while True:
