@@ -1,6 +1,6 @@
 """ Main class that will be used to operate the casino """
 import time
-import sys
+import christmas_crackers, higher_lower, player
 
 def welcome(): #Introduction to the games available
     print("Welcome to Fortune Oasis!")
@@ -30,8 +30,16 @@ def rules():
     print("Type !H [55-100] or !L [0 - 50]. Pick correctly to win [2.0x].")
 
 def userinput():
-    return input(">>>")
+    return input(">>> ").casefold()
 
+def menu(x):
+    if x == '!rules':
+        return rules()
+    elif x == 'exit':
+        print("\033[31mThank you for playing! We hope to see you next time.")
+        exit()
+    
 if __name__ == "__main__":
     welcome()
-    userinput()
+    while True:
+        menu(userinput())
