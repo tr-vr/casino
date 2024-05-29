@@ -29,12 +29,9 @@ def rules():
     print("Dicing: A fair 0 - 100 sided dice is rolled.")
     print("Type !H [55-100] or !L [0 - 50]. Pick correctly to win [2.0x].")
 
-def select():
-    input(":")
- 
-def main():
-    welcome()
-    select()
+def userinput():
+    return input(">>>")
 
 if __name__ == "__main__":
-    main()
+    welcome()
+    userinput()
