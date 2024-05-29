@@ -5,7 +5,8 @@ import christmas_crackers, higher_lower, player
 def setmode(x = christmas_crackers):
     return x.name()
 
-def welcome(): #Introduction to the games available
+def welcome(): 
+    """ Welcome message when the program is ran """
     print("Welcome to Fortune Oasis!")
     print('.' * 25)
     time.sleep(3)
@@ -21,7 +22,8 @@ def welcome(): #Introduction to the games available
     print("Begin by typing !Trade to enter into a offer.")
     print("Christmas Crackers: !You / !Me - OR - Dicing: !H / !L")
     
-def rules(): #game rules
+def rules():
+    """ Basic rules on on how to play. """
     print('-' * 23)
     print("Rules at Fortune Oasis!")
     print('-' * 23)
@@ -35,14 +37,23 @@ def rules(): #game rules
     print("Type !H [55-100] or !L [0 - 50]. Pick correctly to win [2.0x].")
     print()
 
-def userinput(): #non-case sensitive user input
+def userinput(): 
+    """
+    Case-insensitive user input
+    """
     return input(">>> ").casefold()
 
 def trade():
     print("Sending trade request...")
     return input("Offer? ")
 
-def menu(x): #menu options
+def menu(x):
+    """
+    Menu options:
+    - rules
+    - trade
+    - exit
+    """
     if x == '!rules':
         return rules()
     if x == '!trade':
