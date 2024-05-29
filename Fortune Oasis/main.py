@@ -49,7 +49,7 @@ def menu(x): #menu options
     if x == '!trade':
         i = trade()
         print()
-        print("You have offered " + i + " Oasis Points on " + gamemode)
+        print("You have offered " + i + " Oasis Points on " + setmode())
     elif x == 'exit':
         print("\033[31m" + "Thank you for playing! We hope to see you next time.")
         exit()

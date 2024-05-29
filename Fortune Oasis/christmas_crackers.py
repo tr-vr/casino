@@ -7,5 +7,5 @@ The person you pulled the cracker with gets the prize.
 You get the prize from the cracker.
 """
 
-def modename():
+def name():
     return "Christmas Crackers"

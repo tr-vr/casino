@@ -12,3 +12,4 @@ To do list:
 
 - implement player
 - implement player sqlite to hold id, information, stats
+    - decide whether to use a csv file or sqlite database
