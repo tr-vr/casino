@@ -2,6 +2,8 @@
 import time
 import christmas_crackers, higher_lower, player
 
+gamemode = christmas_crackers
+
 def welcome(): #Introduction to the games available
     print("Welcome to Fortune Oasis!")
     print('.' * 25)
@@ -37,16 +39,18 @@ def trade():
     print("Sending trade request...")
     return input("Offer?")
 
-def gamemode(x = christmas_crackers):
-    print("The current game mode is")
-    return x
-
 def menu(x): #menu options
     if x == '!rules':
         return rules()
+    if x == '!trade':
+        i = trade()
+        print("You have offered " + i + " Oasis Points on " + gamemode)
     elif x == 'exit':
         print("\033[31m" + "Thank you for playing! We hope to see you next time.")
         exit()
+    else:
+        print("Please re-enter a valid choice. If you need help type -commands to see "
+              + "available options.")
     
 if __name__ == "__main__":
     welcome()
