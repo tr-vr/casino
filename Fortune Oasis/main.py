@@ -17,7 +17,7 @@ def welcome(): #Introduction to the games available
     print("Select your game options with these commands.")
     print("Christmas Crackers: !You / !Me - OR - Dicing: !H / !L")
     
-def rules():
+def rules(): #game rules
     print('-' * 23)
     print("Rules at Fortune Oasis!")
     print('-' * 23)
@@ -29,10 +29,10 @@ def rules():
     print("Dicing: A fair 0 - 100 sided dice is rolled.")
     print("Type !H [55-100] or !L [0 - 50]. Pick correctly to win [2.0x].")
 
-def userinput():
+def userinput(): #non-case sensitive user input
     return input(">>> ").casefold()
 
-def menu(x):
+def menu(x): #menu options
     if x == '!rules':
         return rules()
     elif x == 'exit':
