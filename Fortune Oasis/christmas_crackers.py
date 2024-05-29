@@ -8,4 +8,4 @@ You get the prize from the cracker.
 """
 
 def name():
-    return "Christmas Crackers"
+    return "!You"

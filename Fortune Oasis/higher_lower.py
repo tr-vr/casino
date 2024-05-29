@@ -8,4 +8,4 @@ If the player calls the correct option, they will receive 2x their stake
 """
 
 def name():
-    return "Dicing"
+    return "Higher"
