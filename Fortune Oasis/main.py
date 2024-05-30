@@ -8,10 +8,13 @@ def setmode(x = christmas_crackers):
 
 # Login Message
 def login_msg():
-    print('---------------------')
+    print('----------------------------------------------------------')
     print('|    You must login or create an account to continue     |')
     print('|    "l" : login                                         |')
     print('|    "c" : create an account                             |')
+    print('|    "d" : delete user                                   |')
+    print('|    "e" : exit                                          |')
+    print('----------------------------------------------------------')
     return input()
 
 # Welcome message when the program is ran
