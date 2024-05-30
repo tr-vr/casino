@@ -8,15 +8,16 @@
 
 import sqlite3
 
-
-
-cur.execute('''CREATE TABLE IF NOT EXISTS playerstats
-                (user text PRIMARY KEY, defaultgame text, balance real, wagered
-                 real, crackerWins real, crackerLoss real, crackerPnL real,
-                DiceWin real, DiceLoss real, DicePnL real, TotalPnL real)''')
-
 # Create a connection to the data base
 def connect():
     con = sqlite3.connect('playerinfo.db')
     cur = con.cursor()
     return con, cur
+
+# Create playerstats database 
+def create_database():
+    cur.execute('''CREATE TABLE IF NOT EXISTS playerstats
+                (user text PRIMARY KEY, defaultgame text, balance real, wagered
+                 real, crackerWins real, crackerLoss real, crackerPnL real,
+                DiceWin real, DiceLoss real, DicePnL real, TotalPnL real)''')
+
