@@ -36,3 +36,12 @@ def finish(con):
     con.close()
 
 # Get a list of usernames
+def get_users_list():
+    con, cur = connect()
+
+    cur.execute('SELECT users FROM playerstats')
+    users_list = cur.fetchall() # Fetch all information from 'users'
+
+    finish(con)
+
+    return users_list
