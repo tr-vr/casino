@@ -17,12 +17,22 @@ def connect():
 # Create playerstats database 
 def create_database():
     con, cur = connect()
-    cur.execute('''CREATE TABLE IF NOT EXISTS playerstats
-                (user text PRIMARY KEY, defaultgame text, balance real, wagered
-                 real, crackerWins real, crackerLoss real, crackerPnL real,
-                DiceWin real, DiceLoss real, DicePnL real, TotalPnL real)''')
+    cur.execute('''CREATE TABLE IF NOT EXISTS "playerstats" (
+                "user" text PRIMARY KEY,
+                "defaultgame" text,
+                "balance" real,
+                "wagered" real,
+                "crackerWins" real,
+                "crackerLoss" real,
+                "crackerPnL" real,
+                "DiceWin" real,
+                "DiceLoss" real,
+                "DicePnL" real,
+                "TotalPnL" real)''')
 
 # Commit the changes + terminate connection to database
 def send(con):
     con.commit()
     con.close()
+
+# Get a list of usernames
