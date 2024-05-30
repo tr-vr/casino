@@ -31,7 +31,7 @@ def create_database():
                 "TotalPnL" real)''')
 
 # Commit the changes + terminate connection to database
-def send(con):
+def finish(con):
     con.commit()
     con.close()
 
