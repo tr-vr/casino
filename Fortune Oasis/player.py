@@ -21,3 +21,7 @@ def create_database():
                  real, crackerWins real, crackerLoss real, crackerPnL real,
                 DiceWin real, DiceLoss real, DicePnL real, TotalPnL real)''')
 
+# Commit the changes + terminate connection to database
+def send():
+    con.commit()
+    con.close()
