@@ -6,6 +6,14 @@ import christmas_crackers, higher_lower, player
 def setmode(x = christmas_crackers):
     return x.name()
 
+# Login Message
+def login_msg():
+    print('---------------------')
+    print('|    You must login or create an account to continue     |')
+    print('|    "l" : login                                         |')
+    print('|    "c" : create an account                             |')
+    return input()
+
 # Welcome message when the program is ran
 def welcome(): 
     print("Welcome to Fortune Oasis!")
@@ -79,6 +87,7 @@ def menu(x):
         print("[Type \033[31m'!help'\033[0m to see all available options].")
     
 if __name__ == "__main__":
+    login_msg()
     welcome()
     while True:
         menu(userinput())
