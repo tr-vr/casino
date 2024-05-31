@@ -6,7 +6,6 @@ import christmas_crackers, higher_lower, player
 def setmode(x = christmas_crackers):
     return x.name()
 
-
 # Login Message
 def login_msg():
     print('----------------------------------------------------------')
