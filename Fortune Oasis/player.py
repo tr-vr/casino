@@ -45,3 +45,7 @@ def get_users_list():
     finish(con)
 
     return users_list
+
+def add_user(username, master_hashed, key):
+    con, cur = connect()
+    cur.execute()
