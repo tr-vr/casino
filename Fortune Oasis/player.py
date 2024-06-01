@@ -37,8 +37,9 @@ def create_database():
                 "DiceWin" REAL,
                 "DiceLoss" REAL,
                 "DicePnL" REAL,
-                "TotalPnL" REAL)
-                ''')
+                "TotalPnL" REAL
+                );
+            ''')
 
 # Commit the changes + terminate connection to database
 def finish(con):
