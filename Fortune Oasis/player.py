@@ -25,18 +25,19 @@ def create_database():
                 );
             ''')
     
-    cur.execute('''CREATE TABLE IF NOT EXISTS "playerstats" (
-                "username" text PRIMARY KEY,
-                "defaultgame" text,
-                "balance" real,
-                "wagered" real,
-                "crackerWins" real,
-                "crackerLoss" real,
-                "crackerPnL" real,
-                "DiceWin" real,
-                "DiceLoss" real,
-                "DicePnL" real,
-                "TotalPnL" real)
+    cur.execute('''
+                CREATE TABLE IF NOT EXISTS "playerstats" (
+                "username" TEXT PRIMARY KEY,
+                "defaultgame" TEXT,
+                "balance" REAL,
+                "wagered" REAL,
+                "crackerWins" REAL,
+                "crackerLoss" REAL,
+                "crackerPnL" REAL,
+                "DiceWin" REAL,
+                "DiceLoss" REAL,
+                "DicePnL" REAL,
+                "TotalPnL" REAL)
                 ''')
 
 # Commit the changes + terminate connection to database
