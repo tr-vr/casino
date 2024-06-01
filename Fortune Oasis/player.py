@@ -18,7 +18,7 @@ def connect():
 def create_database():
     con, cur = connect()
     cur.execute('''CREATE TABLE IF NOT EXISTS "playerstats" (
-                "users" text PRIMARY KEY,
+                "username" text PRIMARY KEY,
                 "defaultgame" text,
                 "balance" real,
                 "wagered" real,
