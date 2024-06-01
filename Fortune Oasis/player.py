@@ -19,7 +19,7 @@ def create_database():
     con, cur = connect()
     cur.execute('''
                 CREATE TABLE IF NOT EXISTS "creds" (
-                "username" TEXT NOT NULL,
+                "username" BLOB NOT NULL PRIMARY KEY,
                 "master_password" BLOB NOT NULL,
                 "key" BLOB NOT NULL
                 );
@@ -27,7 +27,7 @@ def create_database():
     
     cur.execute('''
                 CREATE TABLE IF NOT EXISTS "playerstats" (
-                "username" TEXT PRIMARY KEY,
+                "username" BLOB NOT NULL,
                 "defaultgame" TEXT,
                 "balance" REAL,
                 "wagered" REAL,
@@ -37,7 +37,10 @@ def create_database():
                 "DiceWin" REAL,
                 "DiceLoss" REAL,
                 "DicePnL" REAL,
-                "TotalPnL" REAL
+                "TotalPnL" REAL,
+                CONSTRAINT FK_username
+                FOREIGN KEY ("username")
+                REFERENCES creds(username)
                 );
             ''')
 
