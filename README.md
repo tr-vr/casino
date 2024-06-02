@@ -33,4 +33,6 @@ Player:
 - Encrypt password
 - Create rand(key) for master_pw to master_hash encryption
 
+Main:
+- Log in menu at the beginning before WELCOME()
 
