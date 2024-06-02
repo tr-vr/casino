@@ -60,6 +60,12 @@ def get_users_list():
 
     return users_list
 
+# SQL query to add new user into the Creds table
 def add_user(username, master_hashed, key):
     con, cur = connect()
-    cur.execute()
+    cur.execute(f'''
+                INSERT INTO creds 
+                ("username", "master_password", "key")
+                VALUES ("{username}", "{master_hashed}", "{key}")
+                ''')
+    finish(con)
