@@ -24,7 +24,13 @@ This will include their player balance, logs, total wagered, etc...
 will be required before you log into the game menu.
 
 TO DO:
-Player - build up database to store information
 
-MAIN - Rearrange main menu to have the login prior to display the welcome 
-messages
+Player: 
+- Fix player database to add user
+- Log in
+- Invalid PW
+- Same username error!
+- Encrypt password
+- Create rand(key) for master_pw to master_hash encryption
+
+
