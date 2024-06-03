@@ -60,12 +60,12 @@ def userinput():
     """
     return input(">>> ").casefold()
 
-# Returns amount that Player offers. Should be integer
+# Returns amount that Player offers. Should be an integer
 def trade():
     print("Sending trade request...")
     return input("Offer? ")
 
-# This is the menu function which will output based on diff choices typed
+# Menu function which will output based on different user inputs
 def menu(x):
     """
     Menu options:
