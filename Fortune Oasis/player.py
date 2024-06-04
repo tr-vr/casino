@@ -123,7 +123,7 @@ def get_key(user_id):
     """
     con, cur = connect()
     cur.execute(f'SELECT key FROM creds WHERE id="{user_id}"')
-    key = cursor.fetchone()[0]
+    key = cur.fetchone()[0]
 
     finish(con)
 
