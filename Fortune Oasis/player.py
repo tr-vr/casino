@@ -54,7 +54,7 @@ def finish(con):
 def get_users_list():
     con, cur = connect()
 
-    cur.execute('SELECT users FROM playerstats')
+    cur.execute('SELECT username FROM creds')
     users_list = cur.fetchall() # Fetch all information from 'users'
 
     finish(con)
