@@ -76,3 +76,6 @@ def add_user(username, master_hashed, key):
                 VALUES ("{username}", "{master_hashed}", "{key}")
                 ''')
     finish(con)
+
+# SQL Query to retrieve hashed password of a selected user
+def get_hash(username):
