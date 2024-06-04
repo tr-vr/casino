@@ -93,3 +93,38 @@ def get_hashed_password(username):
     finish(con)
 
     return hashed_password[0] #returns list so need to specify index
+
+# SQL query to get id of a given username
+def get_user_id(username):
+    """
+    Parameters:
+        username (string): login name for user to retrieve
+    
+    Returns:
+        user_id(integer): id of the user [auto-increment
+    """
+    con, cur = connect()
+
+    cur.execute(f'SELECT id FROM creds WHERE username="{username}"')
+    user_id = cur.fetchone()[0]
+    
+    finish(con)
+
+    return user_id
+
+# Get the decryption key for a selected user id
+def get_key(user_id):
+    """
+    Paramaters:
+    user_id(integer): id of user which is auto-incremented
+
+    Returns:
+    key (bytestring): encryption key of user
+    """
+    con, cur = connect()
+    cur.execute(f'SELECT key FROM creds WHERE id="{user_id}"')
+    key = cursor.fetchone()[0]
+
+    finish(con)
+
+    return key.encode
