@@ -63,6 +63,12 @@ def get_users_list():
 
 # SQL query to add new user into the Creds table
 def add_user(username, master_hashed, key):
+    """
+    Parameters:
+    username: username chosen by user in string form
+    master_hashed: hash of the password for the new user
+    key: a key to encrypt and decrypt passwords
+    """
     con, cur = connect()
     cur.execute(f'''
                 INSERT INTO creds 
