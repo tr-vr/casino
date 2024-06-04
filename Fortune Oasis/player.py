@@ -19,7 +19,7 @@ def create_database():
     con, cur = connect()
     cur.execute('''
                 CREATE TABLE IF NOT EXISTS "creds" (
-                "id" INTEGER NOT NULL PRIMARY KEY 
+                "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT 
                 "username" TEXT NOT NULL,
                 "master_password" BLOB NOT NULL,
                 "key" BLOB NOT NULL
