@@ -78,4 +78,18 @@ def add_user(username, master_hashed, key):
     finish(con)
 
 # SQL Query to retrieve hashed password of a selected user
-def get_hash(username):
+def get_hashed_password(username):
+    """
+    Parameters:
+        username (string): name for the user which we want the hashed password.
+    
+        Returns:
+            Will return in a list a hashed password from the specified user.
+    """
+    con, cur = connect()
+    cur.execute(f'SELECT master_hased FROM creds WHERE username="{username}"')
+    hashed_password = cur.fetchone()
+
+    finish(con)
+
+    return hashed_password[0] #returns list so need to specify index
