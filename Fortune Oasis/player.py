@@ -21,7 +21,7 @@ def create_database():
                 CREATE TABLE IF NOT EXISTS "creds" (
                 "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT 
                 "username" TEXT NOT NULL,
-                "master_password" BLOB NOT NULL,
+                "master_hashed" BLOB NOT NULL,
                 "key" BLOB NOT NULL
                 );
             ''')
@@ -72,7 +72,7 @@ def add_user(username, master_hashed, key):
     con, cur = connect()
     cur.execute(f'''
                 INSERT INTO creds 
-                ("username", "master_password", "key")
+                ("username", "master_hashed", "key")
                 VALUES ("{username}", "{master_hashed}", "{key}")
                 ''')
     finish(con)
