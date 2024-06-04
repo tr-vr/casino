@@ -1,6 +1,6 @@
 # Main class that will be used to run the game
 import time
-import christmas_crackers, higher_lower, player
+import player, christmas_crackers, higher_lower
 
 # For now it sets the default game mode to crackers
 def setmode(x = christmas_crackers):
