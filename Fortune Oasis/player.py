@@ -19,9 +19,9 @@ def create_database():
     con, cur = connect()
     cur.execute('''
                 CREATE TABLE IF NOT EXISTS "creds" (
-                "id" INTEGER NOT NULL PRIMARY KEY 
+                "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT 
                 "username" TEXT NOT NULL,
-                "master_password" BLOB NOT NULL,
+                "master_hashed" BLOB NOT NULL,
                 "key" BLOB NOT NULL
                 );
             ''')
@@ -54,7 +54,7 @@ def finish(con):
 def get_users_list():
     con, cur = connect()
 
-    cur.execute('SELECT users FROM playerstats')
+    cur.execute('SELECT username FROM creds')
     users_list = cur.fetchall() # Fetch all information from 'users'
 
     finish(con)
@@ -63,10 +63,33 @@ def get_users_list():
 
 # SQL query to add new user into the Creds table
 def add_user(username, master_hashed, key):
+    """
+    Parameters:
+    username: username chosen by user in string form
+    master_hashed: hash of the password for the new user
+    key: a key to encrypt and decrypt passwords
+    """
     con, cur = connect()
     cur.execute(f'''
                 INSERT INTO creds 
-                ("username", "master_password", "key")
+                ("username", "master_hashed", "key")
                 VALUES ("{username}", "{master_hashed}", "{key}")
                 ''')
     finish(con)
+
+# SQL Query to retrieve hashed password of a selected user
+def get_hashed_password(username):
+    """
+    Parameters:
+        username (string): name for the user which we want the hashed password.
+    
+        Returns:
+            Will return in a list a hashed password from the specified user.
+    """
+    con, cur = connect()
+    cur.execute(f'SELECT master_hased FROM creds WHERE username="{username}"')
+    hashed_password = cur.fetchone()
+
+    finish(con)
+
+    return hashed_password[0] #returns list so need to specify index
