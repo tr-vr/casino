@@ -111,3 +111,20 @@ def get_user_id(username):
     finish(con)
 
     return user_id
+
+# Get the decryption key for a selected user id
+def get_key(user_id):
+    """
+    Paramaters:
+    user_id(integer): id of user which is auto-incremented
+
+    Returns:
+    key (bytestring): encryption key of user
+    """
+    con, cur = connect()
+    cur.execute(f'SELECT key FROM creds WHERE id="{user_id}"')
+    key = cursor.fetchone()[0]
+
+    finish(con)
+
+    return key.encode
