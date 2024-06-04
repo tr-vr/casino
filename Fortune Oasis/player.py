@@ -93,3 +93,21 @@ def get_hashed_password(username):
     finish(con)
 
     return hashed_password[0] #returns list so need to specify index
+
+# SQL query to get id of a given username
+def get_user_id(username):
+    """
+    Parameters:
+        username (string): login name for user to retrieve
+    
+    Returns:
+        user_id(integer): id of the user [auto-increment
+    """
+    con, cur = connect()
+
+    cur.execute(f'SELECT id FROM creds WHERE username="{username}"')
+    user_id = cur.fetchone()[0]
+    
+    finish(con)
+
+    return user_id
